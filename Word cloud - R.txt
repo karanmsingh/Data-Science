@@ -1,0 +1,131 @@
+
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+Registered S3 methods overwritten by 'ggplot2':
+  method         from 
+  [.quosures     rlang
+  c.quosures     rlang
+  print.quosures rlang
+[Workspace loaded from ~/.RData]
+
+> dir.create("C:/Users/Karan/Desktop/WordCloud")
+> download.file("https://ibm.box.com/shared/static/cmid70rpa7xe4ocitcga1bve7r0kqnia.txt", destfile = "C:/Users/Karan/Desktop/WordCloud/churchill_speeches.txt", quiet = TRUE)
+> install.packages("tm")
+also installing the dependencies ‘NLP’, ‘slam’
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/NLP_0.2-0.zip'
+Content type 'application/zip' length 393252 bytes (384 KB)
+downloaded 384 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/slam_0.1-45.zip'
+Content type 'application/zip' length 211633 bytes (206 KB)
+downloaded 206 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/tm_0.7-6.zip'
+Content type 'application/zip' length 1368973 bytes (1.3 MB)
+downloaded 1.3 MB
+
+package ‘NLP’ successfully unpacked and MD5 sums checked
+package ‘slam’ successfully unpacked and MD5 sums checked
+package ‘tm’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\Karan\AppData\Local\Temp\RtmpsbwANX\downloaded_packages
+> install.packages("wordcloud")
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/wordcloud_2.6.zip'
+Content type 'application/zip' length 596996 bytes (583 KB)
+downloaded 583 KB
+
+package ‘wordcloud’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\Karan\AppData\Local\Temp\RtmpsbwANX\downloaded_packages
+> library(tm)
+Loading required package: NLP
+> library(wordcloud)
+Loading required package: RColorBrewer
+> # Select the directory that our text is located
+> dirPath <- "C:/Users/Karan/Desktop/WordCloud"
+> # Load the data as a corpus
+> speech <- Corpus(DirSource(dirPath))
+> inspect(speech)
+<<SimpleCorpus>>
+Metadata:  corpus specific: 1, document level (indexed): 0
+Content:  documents: 1
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          churchill_speeches.txt 
+At present we lie within a few minutes’ striking distance of the French, Dutch and Belgian coasts, and within a few hours of the great aerodromes of Central Europe. We are even within canon-shot of the Continent.\n\nSo close as that! Is it prudent, is it possible, however much we might desire it, to turn our backs upon Europe and ignore whatever may happen there? I have come to the conclusion – reluctantly I admit – that we cannot get away. Here we are and we must make the best of it. But do not underrate the risks – the grevious risks – we have to run.\n\n\nThis is only the beginning of the reckoning. This is only the first sip, the first foretaste of a bitter cup which will be proffered to us year by year unless, by a supreme recovery of moral health and martial vigour, we arise again and take our stand for freedom as in the olden time.\n\n\nI would say to the House, as I said to those who have joined this Government: I have nothing to offer but blood, toil, tears and sweat. We have before us an ordeal of the most grievous kind. We have before us many, many long months of struggle and of suffering. You ask, what is our policy? I can say: It is to wage war, by sea, land and air, with all our might and with all the strength  that God can give us; to wage war against a monstrous tyranny, never surpassed in the dark, lamentable catalogue of human crime. This is our policy. You ask, what is our aim?\n\nI can answer in one word: It is victory, victory at all costs, victory in spite of all terror, victory, however long and hard the road may be, for without victory, there is no survival.\n\n\nEven though large tracts of Europe and many old and famous states have fallen or may fall into the grip of the Gestapo and all the odious apparatus of Nazi rule, we shall not flag or fail. We shall go on to the end, we shall fight in France, we shall fight on the seas and oceans, we shall fight with growing confidence and growing strength in the air, we shall defend our island, whatever the cost may be, we shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets, we shall fight in the hills; we shall never surrender.\n\n\nThe battle of France is over. I expect that the Battle of Britain is about to begin. Upon this battle depends the survival of Christian civilisation. Upon it depends our own British life, and the long continuity of our institutions and our Empire. The whole fury and might of the enemy must very soon be turned upon us. Hitler knows that he will have to break us in this island or lose the war.\n\nIf we can stand up to him, all Europe may be free and the life of the world may move forward into broad, sunlit uplands. But if we fail, then the whole world, including the United States, including all that we have known and cared for, will sink into the abyss of a new Dark Age made more sinister, and perhaps more protracted, by the lights of perverted science. Let us therefore brace ourselves to our duties, and so bear ourselves that, if the British Empire and its Commonwealth last for a thousand years, men will still say, ‘This was their finest hour.\n\n\nThe gratitude of every home in our Island, in our Empire, and indeed throughout the world, except in the abodes of the guilty, goes out to the British airmen who, undaunted by odds, unwearied in their constant challenge and mortal danger, are turning the tide of the World War by their prowess and by their devotion. Never in the field of human conflict was so much owed by so many to so few.\n\n\nFrom Stettin in the Baltic to Trieste in the Adriatic, an iron curtain has descended across the Continent. Behind that line lie all the capitals of the ancient states of Central and Eastern Europe. Warsaw, Berlin, Prague, Vienna, Budapest, Belgrade, Bucharest and Sofia, all these famous cities and the populations around them lie in what I must call the Soviet sphere.\n\n\nI am very glad that Mr Attlee described my speeches in the war as expressing the will not only of Parliament but of the whole nation. Their will was resolute and remorseless and, as it proved, unconquerable. It fell to me to express it, and if I found the right words you must remember that I have always earned my living by my pen and by my tongue. It was the nation and race dwelling all round the globe that had the lion heart. I had the luck to be called upon to give the roar. 
+> # Convert the text to lower case
+> speech <- tm_map(speech, content_transformer(tolower))
+> # Remove numbers
+> speech <- tm_map(speech, removeNumbers)
+> # Remove english common stopwords
+> speech <- tm_map(speech, removeWords, stopwords("english"))
+> 
+> # Remove your own stop word
+> # specify your stopwords as a character vector
+> speech <- tm_map(speech, removeWords, c("floccinaucinihilipification", "squirrelled")) 
+> # Remove punctuations
+> speech <- tm_map(speech, removePunctuation
++ 
++ )
+> # Eliminate extra white spaces
+> speech <- tm_map(speech, stripWhitespace)
+> 
+> #creating a term document matrix
+> dtm <- TermDocumentMatrix(speech)
+> 
+> #matrix transformation
+> m <- as.matrix(dtm)
+> 
+> #sort 
+> v <- sort(rowSums(m), decreasing = TRUE)
+> 
+> #to Dataframw
+> d <- data.frame(word = names(v), freq = v )
+> head(d)
+         word freq
+shall   shall   11
+fight   fight    7
+may       may    6
+will     will    6
+europe europe    5
+upon     upon    5
+> wordcloud(words = d$word, freq = d$freq)
+> wordcloud(words = d$word, freq = d$freq, min.freq = 1)
+Warning messages:
+1: In wordcloud(words = d$word, freq = d$freq, min.freq = 1) :
+  europe could not be fit on page. It will not be plotted.
+2: In wordcloud(words = d$word, freq = d$freq, min.freq = 1) :
+  perhaps could not be fit on page. It will not be plotted.
+3: In wordcloud(words = d$word, freq = d$freq, min.freq = 1) :
+  first could not be fit on page. It will not be plotted.
+4: In wordcloud(words = d$word, freq = d$freq, min.freq = 1) :
+  olden could not be fit on page. It will not be plotted.
+5: In wordcloud(words = d$word, freq = d$freq, min.freq = 1) :
+  populations could not be fit on page. It will not be plotted.
+6: In wordcloud(words = d$word, freq = d$freq, min.freq = 1) :
+  challenge could not be fit on page. It will not be plotted.
+> wordcloud(words = d$word, freq = d$freq, min.freq = 1, max.words = 250)
+Warning message:
+In wordcloud(words = d$word, freq = d$freq, min.freq = 1, max.words = 250) :
+  shall could not be fit on page. It will not be plotted.
+> wordcloud(words = d$word, freq = d$freq, min.freq = 1,
++           max.words=250, colors=brewer.pal(8, "Dark2"))
+> wordcloud(words = d$word, freq = d$freq, min.freq = 1,
++           max.words=250, colors=brewer.pal(8, "Dark2"),
++           random.order = FALSE )
