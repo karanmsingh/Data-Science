@@ -1,0 +1,45 @@
+> install.packages("waffle")
+also installing the dependencies ‘extrafontdb’, ‘Rttf2pt1’, ‘gridExtra’, ‘extrafont’
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/extrafontdb_1.0.zip'
+Content type 'application/zip' length 10383 bytes (10 KB)
+downloaded 10 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/Rttf2pt1_1.3.7.zip'
+Content type 'application/zip' length 117639 bytes (114 KB)
+downloaded 114 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/gridExtra_2.3.zip'
+Content type 'application/zip' length 1109386 bytes (1.1 MB)
+downloaded 1.1 MB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/extrafont_0.17.zip'
+Content type 'application/zip' length 52327 bytes (51 KB)
+downloaded 51 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/waffle_0.7.0.zip'
+Content type 'application/zip' length 313382 bytes (306 KB)
+downloaded 306 KB
+
+package ‘extrafontdb’ successfully unpacked and MD5 sums checked
+package ‘Rttf2pt1’ successfully unpacked and MD5 sums checked
+package ‘gridExtra’ successfully unpacked and MD5 sums checked
+package ‘extrafont’ successfully unpacked and MD5 sums checked
+package ‘waffle’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\Karan\AppData\Local\Temp\RtmpMFwoa5\downloaded_packages
+> library(ggplot2)
+> library(waffle)
+> expenses <- c(`Health ($43,212)`=43212, `Education ($113,412)`=113412,
++               `Transportation ($20,231)`=20231, `Entertainment ($28,145)`=28145)
+> waffle(expenses/1235, rows=5, size=0.3, 
++        colors=c("#c7d4b6", "#a3aabd", "#a0d0de", "#97b5cf"), 
++        title="Imaginary Household Expenses Each Year", 
++        xlab="1 square = $934")
+> IRkernel::set_plot_options(width=950, height=600, units='px')
+Error in loadNamespace(name) : there is no package called ‘IRkernel’
+> waffle(expenses/1235, rows=5, size=0.3, 
++        colors=c("#c7d4b6", "#a3aabd", "#a0d0de", "#97b5cf"), 
++        title="Imaginary Household Expenses Each Year", 
++        xlab="1 square = $934")
